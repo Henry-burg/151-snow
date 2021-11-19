@@ -2,19 +2,19 @@
 	"logins": [
 		{
 			"login": "nithujan@gmail.com",
-			"pwd": "1a2b3c4d5e;"
+			"pwd": "123;"
 		},
 		{
 			"login": "jeffrey@gmail.com",
-			"pwd": "2b3c4d5e;1a"
+			"pwd": "1234"
 		},
 		{
 			"login": "florian@gmail.com",
-			"pwd": "3c4d5e;1a2b"
+			"pwd": "12345"
 		},
 		{
 			"login": "din@gmail.com",
-			"pwd": "4d5e;1a2b3c"
+			"pwd": "123456"
 		}
 	]
 }
