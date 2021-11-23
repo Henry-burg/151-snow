@@ -89,7 +89,11 @@
                         </li>
 
                         <li>
+                            <?php if (isset($_SESSION['email'])) { ?>
+                            <a href="index.php?action=logout">Logout</a>
+                            <?php } else { ?>
                             <a href="index.php?action=login">Login</a>
+                            <?php } ?>
                         </li>
 
                     </ul>
@@ -130,7 +134,9 @@
                 <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
                     <span class="topbar-child1">
                         <?php
+                        if (isset($_SESSION['email'])) {
                             echo $_SESSION['email'];
+                        }
                         ?>
                     </span>
                 </li>

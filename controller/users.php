@@ -17,10 +17,17 @@ function login() {
             require "view/home.php";
             echo "mail is set and ok";
         } else {
+            $errorMsg = "Erreur [email ou mot de passe incorrect]";
             require "view/login.php";
             echo "mail is not set";
         }
     } else { // ask the login page
         require "view/login.php";
     }
+}
+
+function logout() {
+    session_destroy();
+    $_SESSION = array();
+    require "view/home.php";
 }

@@ -11,7 +11,7 @@ function checkLogin() {
     //récupère fichier json
     //stocke le contenu du fichier json
     //lecture / parcours du fichier json
-    //on vérifie si une des valeurs récupérée correspond à l'email saisi par l'utilisateur
+    //on vérifie si une des valeurs récupérées correspond à l'email saisi par l'utilisateur
 
     $jsonUsers = file_get_contents("model/users.json");
     $tabUsers = json_decode($jsonUsers, true);
@@ -20,6 +20,7 @@ function checkLogin() {
     foreach ($tabUsers as $key => $tabUsersInter) {
         foreach ($tabUsersInter as $entry => $tabLogin) {
             if (in_array($email, $tabLogin, true) &&  in_array($pwd, $tabLogin, true)) {
+                session_start();
                 return true;
             }
         }
