@@ -12,8 +12,14 @@ require "model/userMgt.php";
 function login() {
     // check if email is set, if we come from the login page and click on the login button
     if (isset($_POST['email'])) {
-        checkLogin();
-        require "view/home.php";
+        if(checkLogin()) {
+            $_SESSION['email'] = $_POST['email'];
+            require "view/home.php";
+            echo "mail is set and ok";
+        } else {
+            require "view/login.php";
+            echo "mail is not set";
+        }
     } else { // ask the login page
         require "view/login.php";
     }

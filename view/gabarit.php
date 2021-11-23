@@ -61,8 +61,15 @@
             </div>
 
             <span class="topbar-child1">
-					Livraison gratuite dès 200.-
-				</span>
+                Livraison gratuite dès 200.-
+            </span>
+            <span class="topbar-child1">
+                <?php
+                if (isset($_SESSION['email'])) {
+                    echo $_SESSION['email'];
+                }
+                ?>
+            </span>
 
 
         </div>
@@ -116,9 +123,16 @@
         <nav class="side-menu">
             <ul class="main-menu">
                 <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
-						<span class="topbar-child1">
-							Livraison gratuite dès 200.-
-						</span>
+                    <span class="topbar-child1">
+                        Livraison gratuite dès 200.-
+                    </span>
+                </li>
+                <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+                    <span class="topbar-child1">
+                        <?php
+                            echo $_SESSION['email'];
+                        ?>
+                    </span>
                 </li>
 
 

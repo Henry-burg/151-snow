@@ -8,21 +8,22 @@
  */
 
 function checkLogin() {
-    // get jason file
-    // stock the content of the jason file
-    // verify if th user's data match th jason's data
+    //récupère fichier json
+    //stocke le contenu du fichier json
+    //lecture / parcours du fichier json
+    //on vérifie si une des valeurs récupérée correspond à l'email saisi par l'utilisateur
 
-    $jasonUsers = file_get_contents("model/users.jason");
-    $tabUsers = json_decode($jasonUsers, true);
-    foreach ($tabUsers as $key => $tabUserInter) {
-        foreach ($tabUserInter as $entry => $tabLogin)
-        {
-            $email = $_POST['email'];
-            $pwd = $_POST['userPswd'];
-            if (in_array($email, $tabLogin, true) && (in_array($pwd, $tabLogin, true))) {
+    $jsonUsers = file_get_contents("model/users.json");
+    $tabUsers = json_decode($jsonUsers, true);
+    $email = $_POST['email'];
+    $pwd = $_POST['userPswd'];
+    foreach ($tabUsers as $key => $tabUsersInter) {
+        foreach ($tabUsersInter as $entry => $tabLogin) {
+            if (in_array($email, $tabLogin, true) &&  in_array($pwd, $tabLogin, true)) {
                 return true;
             }
         }
     }
+
     return false;
 }
